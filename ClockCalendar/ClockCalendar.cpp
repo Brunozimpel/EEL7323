@@ -36,9 +36,9 @@ public class Clock
 		}
 	}
 	
-	public void advance()
+	public void advance(freq)
 	{
-		while(1)
+		// ler sobre time.h, aula 5				
 	}
 }
 
