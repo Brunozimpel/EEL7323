@@ -1,4 +1,5 @@
 #include "ClockCalendar.h"
+#include "timer.h"
 using namespace std
 
 public class Clock 
@@ -36,9 +37,27 @@ public class Clock
 		}
 	}
 	
-	public void advance(freq)
+	public void advance()
 	{
-		// ler sobre time.h, aula 5				
+		s++;
+		if (s==60)
+		{
+			s = 0;
+			m++;
+			if(m==60)
+			{
+				m = 0;
+				h++;
+				if (h==12)
+				{
+					pm = !pm;
+				}
+				else if (h==13)
+				{
+					h = 1;
+				}
+			}
+		}				
 	}
 }
 
@@ -64,14 +83,24 @@ public class Calendar
 	public void readCalendar(int& m, int& d, int& y)
 	{
 		cout << "Dias: " << d << endl;
-		cout << "Mês: " << m << end1;
+		cout << "MÃªs: " << m << end1;
 		cout << "Ano: " << y << end1;
 		
 	}
 	
 	public void advance()
 	{
-		//alguma ++
+		d++;
+		if (d == 31)
+		{
+			d = 1;
+			m++;
+			if (m == 13)
+			{
+				m = 1;
+				y++;
+			}
+		}
 	}
 }
 
